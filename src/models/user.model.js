@@ -10,7 +10,7 @@ const UserSchema = new Schema({
     admin: {type: Boolean, required: true}
 });
 
-UserSchema.methods.toJSON() = function(){
+UserSchema.methods.toJSON = function(){
     let user = this.toObject();
     delete user.password;
     return user;
