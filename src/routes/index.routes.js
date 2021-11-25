@@ -1,3 +1,7 @@
 module.exports = {
-    HomeRoutes: require('./home.routes')
+    HomeRoutes: require('./home.routes'),
+    UserRoutes: require('./user.routes'),
+    BookRoutes: require('./book.routes'),
+    EditorialRoutes: require('./editorial.routes'),
+    AuthorRoutes: require('./author.routes')  
 };
