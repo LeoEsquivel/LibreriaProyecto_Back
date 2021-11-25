@@ -1,8 +1,8 @@
 let _authorService = null;
 
 class AuthorController {
-    constructor({AuthorSerVice}){
-        _authorService = AuthorSerVice;
+    constructor({AuthorService}){
+        _authorService = AuthorService;
     }
 
     async get(request, response){
