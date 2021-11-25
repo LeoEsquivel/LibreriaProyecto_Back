@@ -15,7 +15,9 @@ const BookSchema = new Schema({
         ref: 'editorial',
         required: true,
         autopopulate: true
-    }
+    }, 
+    price: {type: Number, required: true},
+    amounth: {type: Number, required: true}
 });
 
 BookSchema.plugin(require('mongoose-autopopulate'));
