@@ -48,8 +48,8 @@ class BaseService {
             error.message = "Id debe ser enviado";
             throw error;
         }
-        return await this.repository.delete(id, entity);
-
+        await this.repository.delete(id, entity);
+        return true;
     }
 
 }
