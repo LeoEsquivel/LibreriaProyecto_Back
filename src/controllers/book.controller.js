@@ -37,15 +37,15 @@ class BookController{
     }
 
     async getBooksAuthor(request, response){
-        const { authorId } = req.params;
+        const { authorId } = request.params;
         const books = await _bookService.getBooksAuthor(authorId);
-        return response.send(books)
+        return response.send(books);
     }
 
     async getBooksEditorial(request, response){
-        const { editorialId } = req.params;
+        const { editorialId } = request.params;
         const books = await _bookService.getBooksEditorial(editorialId);
-        return response.send(books)
+        return response.send(books);
     }
 }
 
