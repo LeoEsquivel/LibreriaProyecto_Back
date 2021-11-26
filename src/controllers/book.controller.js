@@ -7,7 +7,7 @@ class BookController{
 
     async create(request, response){
         const { body } = request;
-        const newBook = await _bookService.create.create(body);
+        const newBook = await _bookService.create(body);
         return response.status(201).send(newBook);
     }
 

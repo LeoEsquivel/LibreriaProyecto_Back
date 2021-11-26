@@ -13,7 +13,7 @@ class AuthorController {
 
     async create(request, response){
         const { body } = request;
-        const newAuthor = await _authorService.create.create(body);
+        const newAuthor = await _authorService.create(body);
         return response.status(201).send(newAuthor);
     }
 

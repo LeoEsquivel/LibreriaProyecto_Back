@@ -7,7 +7,7 @@ class EditorialController{
 
     async create(request, response){
         const { body } = request;
-        const newEditorial = await _editorialService.create.create(body);
+        const newEditorial = await _editorialService.create(body);
         return response.status(201).send(newEditorial);
     }
 
