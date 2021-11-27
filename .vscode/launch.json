@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "name": "http://localhost:5000/v1/api/auth/signup",
+            "request": "launch",
+            "url": "http://localhost:5000/v1/api/auth/signup"
+        }
+    ]
+}

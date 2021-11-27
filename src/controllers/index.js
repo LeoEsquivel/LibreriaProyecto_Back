@@ -4,5 +4,6 @@ module.exports = {
     BookController: require('./book.controller'),
     EditorialController: require('./editorial.controller'),
     AuthorController: require('./author.controller'),
-    SaleController: require('./sale.controller')
+    SaleController: require('./sale.controller'),
+    AuthController: require('./auth.controller')
 }

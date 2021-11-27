@@ -12,7 +12,7 @@ class BaseRepositery {
         return await this.model.find();
     }
 
-    async create(entity){
+    async create(entity) {
         return await this.model.create(entity);
     }
 

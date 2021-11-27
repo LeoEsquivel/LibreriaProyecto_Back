@@ -5,13 +5,13 @@ const config = require('../config');
 const app = require('.')
 
 //Services
-const { HomeService, UserService, BookService, AuthorService, EditorialService, SaleService } = require('../services');
+const { HomeService, UserService, BookService, AuthorService, EditorialService, SaleService, AuthService } = require('../services');
 
 //Controllers
-const {HomeController, UserController, BookController, EditorialController, AuthorController, SaleController} = require('../controllers');
+const {HomeController, UserController, BookController, EditorialController, AuthorController, SaleController, AuthController} = require('../controllers');
 
 //Routes
-const { HomeRoutes, UserRoutes, BookRoutes, EditorialRoutes, AuthorRoutes, SaleRoutes } = require('../routes/index.routes');
+const { HomeRoutes, UserRoutes, BookRoutes, EditorialRoutes, AuthorRoutes, SaleRoutes, AuthRoutes } = require('../routes/index.routes');
 const Routes = require('../routes');
 
 //Models
@@ -35,21 +35,24 @@ container
     BookService: asClass(BookService).singleton(),
     EditorialService: asClass(EditorialService).singleton(),
     AuthorService: asClass(AuthorService).singleton(),
-    SaleService: asClass(SaleService).singleton()
+    SaleService: asClass(SaleService).singleton(),
+    AuthService: asClass(AuthService).singleton()
 }).register({
     HomeController: asClass(HomeController.bind(HomeController)).singleton(),
     UserController: asClass(UserController.bind(UserController)).singleton(),
     BookController: asClass(BookController.bind(BookController)).singleton(),
     EditorialController: asClass(EditorialController.bind(EditorialController)).singleton(),
     AuthorController: asClass(AuthorController.bind(AuthorController)).singleton(),
-    SaleController: asClass(SaleController).singleton()
+    SaleController: asClass(SaleController.bind(SaleController)).singleton(),
+    AuthController: asClass(AuthController.bind(AuthController)).singleton()
 }).register({
     HomeRoutes: asFunction(HomeRoutes).singleton(),
     UserRoutes: asFunction(UserRoutes).singleton(),
     BookRoutes: asFunction(BookRoutes).singleton(),
     EditorialRoutes: asFunction(EditorialRoutes).singleton(),
     AuthorRoutes: asFunction(AuthorRoutes).singleton(),
-    SaleRoutes: asFunction(SaleRoutes).singleton()
+    SaleRoutes: asFunction(SaleRoutes).singleton(),
+    AuthRoutes: asFunction(AuthRoutes).singleton()
 }).register({
     User: asValue(User),
     Book: asValue(Book),
