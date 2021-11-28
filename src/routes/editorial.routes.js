@@ -1,5 +1,6 @@
 const { Router } = require('express');
-const {ParseMiddleware} = require('../middlewares')
+const {ParseMiddleware, CacheMiddleware} = require('../middlewares');
+const { Cache_TIME} = require('../helpers');
 
 
 module.exports = function({EditorialController}) {
@@ -7,8 +8,8 @@ module.exports = function({EditorialController}) {
 
     router.post('', EditorialController.create);
 
-    router.get('/:editorialId', EditorialController.get);
-    router.get('', [ParseMiddleware], EditorialController.getAll);
+    router.get('/:editorialId', [CacheMiddleware(Cache_TIME.QUARTER_HOUR)], EditorialController.get);
+    router.get('', [ParseMiddleware, CacheMiddleware(Cache_TIME.TWO_HOURS)], EditorialController.getAll);
 
     router.patch('/:editorialId', EditorialController.update);
     router.delete('/:editorialId', EditorialController.delete);
