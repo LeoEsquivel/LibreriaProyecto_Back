@@ -7,7 +7,11 @@ const UserSchema = new Schema({
     username: {type: String, required: true},
     password: {type: String, required: true},
     email: {type: String, required: true},
-    admin: {type: Boolean, required: true}
+    admin: {type: Boolean, required: true},
+    cart: {
+        type: Schema.Types.ObjectId,
+        ref: 'cart',
+    }
 });
 
 UserSchema.methods.toJSON = function(){
