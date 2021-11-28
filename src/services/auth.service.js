@@ -15,6 +15,7 @@ class AuthService{
             error.message = "El usuario ya existe";
             throw error;
         }
+     
         return await _userService.create(user);
          
     }
@@ -22,7 +23,7 @@ class AuthService{
     async signIn(user){
         const {username, password} = user;
         const userExist = await _userService.getUserByUsername(username);
-        if(userExist){
+        if(!userExist){
             const error = new Error();
             error.status = 404;
             error.message = "El usuario no existe";

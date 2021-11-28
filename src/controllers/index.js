@@ -5,5 +5,6 @@ module.exports = {
     EditorialController: require('./editorial.controller'),
     AuthorController: require('./author.controller'),
     SaleController: require('./sale.controller'),
-    AuthController: require('./auth.controller')
+    AuthController: require('./auth.controller'),
+    CartController: require('./cart.controller')
 }

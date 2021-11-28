@@ -5,5 +5,6 @@ module.exports = {
     EditorialRoutes: require('./editorial.routes'),
     AuthorRoutes: require('./author.routes'),
     SaleRoutes: require('./sale.routes'),
-    AuthRoutes: require('./auth.routes')
+    AuthRoutes: require('./auth.routes'),
+    CartRoutes: require('./cart.routes')
 };

@@ -5,5 +5,6 @@ module.exports = {
     EditorialService: require('./editorial.service'),
     AuthorService: require('./author.service'),
     SaleService: require('./sale.service'),
-    AuthService: require('./auth.service')
+    AuthService: require('./auth.service'),
+    CartService: require('./cart.service')
 };

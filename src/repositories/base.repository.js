@@ -1,7 +1,6 @@
 class BaseRepositery {
     constructor(model){
         this.model = model;
-
     }
 
     async get(id){
