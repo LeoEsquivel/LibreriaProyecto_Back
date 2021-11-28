@@ -19,7 +19,8 @@ class EditorialController{
     }
 
     async getAll(request, response){
-        const authors = await _editorialService.getAll();
+        const {pageSize, pageNum} = request.query;
+        const authors = await _editorialService.getAll(pageSize, pageNum);
         return response.send(authors);
     }
 

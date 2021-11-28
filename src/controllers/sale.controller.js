@@ -19,7 +19,8 @@ class SaleController{
     }
 
     async getAll(request, response){
-        const sales = await _saleService.getAll();
+        const {pageSize, pageNum} = request.query;
+        const sales = await _saleService.getAll(pageSize, pageNum);
         return response.send(sales);
     }
 

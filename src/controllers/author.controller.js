@@ -19,7 +19,8 @@ class AuthorController {
 
 
     async getAll(request, response){
-        const authors = await _authorService.getAll();
+        const {pageSize, pageNum} = request.query;
+        const authors = await _authorService.getAll(pageSize, pageNum);
         return response.send(authors);
     }
 

@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const {ParseMiddleware} = require('../middlewares')
 
 module.exports = function({SaleController}){
     const router = Router();
@@ -6,8 +7,8 @@ module.exports = function({SaleController}){
     router.post('', SaleController.create);
 
     router.get('/:saleId', SaleController.get);
-    router.get('', SaleController.getAll);
-    router.get('/:userId/all', SaleController.getUserSales);
+    router.get('', [ParseMiddleware], SaleController.getAll);
+    router.get('/:userId/all', [ParseMiddleware], SaleController.getUserSales);
 
     router.patch('/:saleId', SaleController.update);
     router.delete('/:saleId', SaleController.delete);
