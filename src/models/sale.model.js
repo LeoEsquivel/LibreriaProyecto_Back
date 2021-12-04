@@ -9,12 +9,12 @@ const SaleSchema = new Schema({
         required: true,
         autopopulate: true
     },
-    book:{
+    book:[{
         type: Schema.Types.ObjectId,
         ref: 'book',
         required: true,
         autopopulate: true
-    },
+    }],
     total: {type: Number, required: true}
 });
 

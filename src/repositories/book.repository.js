@@ -9,11 +9,11 @@ class BookRepository extends BaseRepository{
         _book = Book;
     }
 
-    async getAuthorBooks(author){
+    async getBooksAuthor(author){
         return await _book.find({author});
     }
 
-    async getEditorialBooks(editorial){
+    async getBooksEditorial(editorial){
         return await _book.find({editorial});
     }
 }

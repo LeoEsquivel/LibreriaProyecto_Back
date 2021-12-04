@@ -1,6 +1,6 @@
 const {createContainer, asClass, asValue, asFunction} = require('awilix')
 
-//Congfig
+//Config
 const config = require('../config');
 const app = require('.')
 

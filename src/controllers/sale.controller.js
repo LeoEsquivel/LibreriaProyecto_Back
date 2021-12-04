@@ -34,12 +34,12 @@ class SaleController{
     async delete(request, response){
         const { saleId } = response.params;
         const deletedSale = await _saleService.delete(saleId);
-        return response.send(sale);
+        return response.send(deletedSale);
     }
 
     async getUserSales(request, response){
         const { userId } = request.params;
-        const sales = await _bookService.getBooksAuthor(userId);
+        const sales = await _saleService.getUserSales(userId);
         return response.send(sales)
     }
     

@@ -7,7 +7,7 @@ class BookService extends BaseService{
         super(BookRepository);
         _bookRepository = BookRepository;
     }
-
+//getBooksEditorial
     async getBooksAuthor(author){
         if(!author){
             const error = new Error();

@@ -17,7 +17,8 @@ const BookSchema = new Schema({
         autopopulate: true
     }, 
     price: {type: Number, required: true},
-    amounth: {type: Number, required: true}
+    amounth: {type: Number, required: true},
+    imgUrl: {type: String }
 });
 
 BookSchema.plugin(require('mongoose-autopopulate'));

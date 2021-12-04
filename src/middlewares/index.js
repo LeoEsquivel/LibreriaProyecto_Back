@@ -4,5 +4,4 @@ module.exports = {
     AuthMiddleware: require('./auth.middleware'),
     ParseMiddleware: require('./parse-int.middleware'),
     CacheMiddleware: require('./cache.middleware')
-
 }

@@ -1,4 +1,3 @@
-const { Sale } = require('../models');
 const BaseService = require('./base.service');
 
 let _saleRespository = null;
@@ -18,6 +17,10 @@ class SaleService extends BaseService{
             throw error;
         }
         return await _saleRespository.getUserSales(user);
+    }
+
+    async addBookToSale(saleId){
+        
     }
 }
 
