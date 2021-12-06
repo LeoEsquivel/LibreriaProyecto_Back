@@ -4,7 +4,7 @@ const helmet = require('helmet');
 const compression = require('compression');
 require('express-async-errors');
 
-const { ErrorMiddleware, NotFoundMiddleware} = require('../middlewares');
+const { ErrorMiddleware, NotFoundMiddleware, CorsMiddleware} = require('../middlewares');
 
 module.exports = function({HomeRoutes, UserRoutes, BookRoutes, EditorialRoutes, AuthorRoutes, SaleRoutes, AuthRoutes, CartRoutes}) {
     const router = express.Router();
@@ -15,6 +15,15 @@ module.exports = function({HomeRoutes, UserRoutes, BookRoutes, EditorialRoutes, 
     .use(cors())
     .use(helmet())
     .use(compression());
+
+    router.use((req, res, next) => {
+        res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+        res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+        res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+        res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+        next();
+    });
+    
 
     apiRoutes.use('/home', HomeRoutes);
     apiRoutes.use('/user', UserRoutes);
