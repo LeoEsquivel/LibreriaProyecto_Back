@@ -28,7 +28,7 @@ class AuthorController {
         const { body } = request;
         const { authorId } = request.params;
         const updatedAuthor = await _authorService.update(authorId, body);
-        return request.send(updatedAuthor);
+        return response.send(updatedAuthor);
     }
 
     async delete(request, response){

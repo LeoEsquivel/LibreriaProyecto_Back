@@ -27,7 +27,7 @@ class BookController{
         const { body } = request;
         const { bookId } = request.params;
         const updatedBook = await _bookService.update(bookId, body);
-        return request.send(updatedBook);
+        return response.send(updatedBook);
         
     }
 

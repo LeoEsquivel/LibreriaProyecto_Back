@@ -28,12 +28,12 @@ class EditorialController{
         const { body } = request;
         const { editorialId } = request.params;
         const updatedEditorial = await _editorialService.update(editorialId);
-        return request.send(updatedEditorial);
+        return response.send(updatedEditorial);
     }
 
     async delete(request, response){
         const { editorialId } = request.params;
-        const deleteEditorial = await _editorialService.delete(editorial);
+        const deleteEditorial = await _editorialService.delete(editorialId);
         return deleteEditorial;
     }
 }
